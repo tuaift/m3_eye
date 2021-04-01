@@ -14,13 +14,10 @@
   <body>
     <section class="content">
       <div class="interactive-l-container" id="draggable">
+        <!-- CHANGE -->
         <div id="canvasPointer"></div>
         <div id="canvasCircle"></div>
 
-        <div class="thing-container">
-          <div class="thing" id="thingL"></div>
-          <div class="thing" id="thingS"></div>
-        </div>
         <div class="dots-container">
           <div class="dot fast" data-el="el0">
             <div class="dot-info">
@@ -30,7 +27,7 @@
                 <div class="c-y"></div>
               </div>
             </div>
-            <div class="dot-el" id="cl1"></div>
+            <div class="dot-el"></div>
           </div>
           <div class="dot slow" data-el="el1">
             <div class="dot-info">
@@ -74,7 +71,7 @@
         <div class="eyelid eyelid-bottom"></div>
       </div>
       <div class="control-layer">
-        <div class="button on">
+        <div class="button">
           <img class="imgg img-blink-on" id="blink-on" src="./img/blink.svg" alt="">
         </div>
         <div class="button off">
@@ -82,6 +79,7 @@
         </div>
       </div>
     </section>
+    <!-- CHANGE -->
     <div class="eye-container" id="canvas-parent">
       <svg class="eye" viewBox="0 0 1680 525" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
         <defs>
@@ -90,13 +88,13 @@
               <animate
                 id="top-lid"
                 attributeName="d"
-                from="M0,0 H1 v1.0012 H0.99523 C0.84,-0.305,0.16,-0.305,0.00477,1.0012 H0 z"
-                to="M0,0 H1 v1.0012 H0.99523 C0.84,1.0012,0.16,1.0012,0.00477,1.0012 H0 z"
+                from="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z"
+                to="M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z"
                 dur="2.5s"
                 calcMode="spline"
-                values="M0,0 H1 v1.0012 H0.99523 C0.84,-0.305,0.16,-0.305,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.84,1.0012,0.16,1.0012,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.84,-0.305,0.16,-0.305,0.00477,1.0012 H0 z;"
+                values="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;"
                 keyTimes="0; 0.5; 1"
                 keySplines="0 0 .6 .2;
                             0 0 0 .1;"
@@ -106,17 +104,17 @@
             </path>
           </clipPath>
           <clipPath id="svg-eye-bottom" clipPathUnits="objectBoundingBox">
-            <path d="M0,0 H1 v1.0012 H0.99523 C0.84,-0.305,0.16,-0.305,0.00477,1.0012 H0 z" fill="black" transform='rotate(180 0.5 0.5)'>
+            <path d="M0,0 H1 v1.0012 H0.99523 C0.83,-0.305,0.17,-0.305,0.00477,1.0012 H0 z" fill="black" transform='rotate(180 0.5 0.5)'>
               <animate
                 id="bottom-lid"
                 attributeName="d"
-                from="M0,0 H1 v1.0012 H0.99523 C0.84,-0.305,0.16,-0.305,0.00477,1.0012 H0 z"
-                to="M0,0 H1 v1.0012 H0.99523 C0.84,1.0012,0.16,1.0012,0.00477,1.0012 H0 z"
+                from="M0,0 H1 v1.0012 H0.99523 C0.83,-0.305,0.17,-0.305,0.00477,1.0012 H0 z"
+                to="M0,0 H1 v1.0012 H0.99523 C0.83,1.0012,0.17,1.0012,0.00477,1.0012 H0 z"
                 dur='2.5s'
                 calcMode="spline"
-                values="M0,0 H1 v1.0012 H0.99523 C0.84,-0.305,0.16,-0.305,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.84,1.0012,0.16,1.0012,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.84,-0.305,0.16,-0.305,0.00477,1.0012 H0 z;"
+                values="M0,0 H1 v1.0012 H0.99523 C0.83,-0.305,0.17,-0.305,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.83,1.0012,0.17,1.0012,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.83,-0.305,0.17,-0.305,0.00477,1.0012 H0 z;"
                 keyTimes="0; 0.5; 1"
                 keySplines="0 0 .6 .2;
                             0 0 0 .1;"
@@ -126,17 +124,17 @@
             </path>
           </clipPath>
           <clipPath id="svg-eye-top-1024" clipPathUnits="objectBoundingBox">
-            <path d="M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z" fill="black">
+            <path d="M0,0 H1 v1.0012 H0.99523 C0.83,-0.305,0.17,-0.305,0.00477,1.0012 H0 z" fill="black">
               <animate
                 id="top-lid"
                 attributeName="d"
-                from="M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z"
-                to="M0,0 H1 v1.0012 H0.99523 C0.89,1.0012,0.11,1.0012,0.00477,1.0012 H0 z"
+                from="M0,0 H1 v1.0012 H0.99523 C0.86,-0.305,0.14,-0.305,0.00477,1.0012 H0 z"
+                to="M0,0 H1 v1.0012 H0.99523 C0.86,1.0012,0.14,1.0012,0.00477,1.0012 H0 z"
                 dur="2.5s"
                 calcMode="spline"
-                values="M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.89,1.0012,0.11,1.0012,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z;"
+                values="M0,0 H1 v1.0012 H0.99523 C0.86,-0.305,0.14,-0.305,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;"
                 keyTimes="0; 0.5; 1"
                 keySplines="0 0 .6 .2;
                             0 0 0 .1;"
@@ -146,17 +144,17 @@
             </path>
           </clipPath>
           <clipPath id="svg-eye-bottom-1024" clipPathUnits="objectBoundingBox">
-            <path d="M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z" fill="black" transform='rotate(180 0.5 0.5)'>
+            <path d="M0,0 H1 v1.0012 H0.99523 C0.86,-0.305,0.14,-0.305,0.00477,1.0012 H0 z" fill="black" transform='rotate(180 0.5 0.5)'>
               <animate
                 id="bottom-lid"
                 attributeName="d"
-                from="M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z"
-                to="M0,0 H1 v1.0012 H0.99523 C0.89,1.0012,0.11,1.0012,0.00477,1.0012 H0 z"
+                from="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z"
+                to="M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z"
                 dur='2.5s'
                 calcMode="spline"
-                values="M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.89,1.0012,0.11,1.0012,0.00477,1.0012 H0 z;
-                        M0,0 H1 v1.0012 H0.99523 C0.89,-0.305,0.11,-0.305,0.00477,1.0012 H0 z;"
+                values="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;"
                 keyTimes="0; 0.5; 1"
                 keySplines="0 0 .6 .2;
                             0 0 0 .1;"
@@ -227,71 +225,52 @@
        });
 
 
+       // $(function(){
+       //   let i = 0;
+       //   $('.dot').click(function(){
+       //     i += 1;
+       //     let index = $(".dot").index(this);
+       //     if (i < 10) {
+       //       $('.counter').html('0'+i);
+       //       $(this).find('.dot-num').html(index);
+       //     } else {
+       //       $('.counter').html(i);
+       //     }
+       //     $(this).children('.dot-info').first().css('display', 'flex');
+       //   });
+       // });
+
+
+
+
+
+
+
+
+
+
     $(document).ready(function() {
       $("#draggable").draggable();
     });
-
-
 
      $(function(){
          $(".imgg").css('height', 110 + '%');
          $(window).resize(function(){
              let h = $(window).height();
              let w = $(window).width();
-             $(".imgg").css('height',(w <= 1024) ? parseInt(110) + '%' : 110 + '%');
-             $(".imgg").css('height',(w <= 440) ? parseInt(160) + '%' : 110 + '%');
+             $(".imgg").css('height',(w <= 1024) ? parseInt(110 - h * 0.02) + '%' : 110 + '%');
          });
        });
 
        $('#blink-on').click(function() {
           document.getElementById('top-lid').beginElement();
           document.getElementById('bottom-lid').beginElement();
-          $('.thing-container').css('display', 'none'), 5000;
         })
 
         $('#blink-off').click(function() {
            document.getElementById('top-lid').endElement();
            document.getElementById('bottom-lid').endElement();
          })
-
-
-
-
-         $(function(){
-            $("#thingL").on({
-                mouseover:function(){
-                    $(this).css({
-                        left:(Math.random()*500)+"px",
-                        top:(Math.random()*500)+"px",
-                    });
-                  }
-              });
-              $("#thingS").on({
-                  mouseover:function(){
-                      $(this).css({
-                          left:(Math.random()*200)+"px",
-                          top:(Math.random()*200)+"px",
-                      });
-                    }
-                });
-          });
-
-
-         // let thing1 = $(#thingL);
-         //
-         // function moveThing() {
-         //   var randX = Math.floor(Math.random() * (window.innerWidth - 100));
-         //   var randY = Math.floor(Math.random() * (window.innerHeight - 100));
-         //   thing1.stop().animate({"left": randX + "px", "top": randY + "px"});
-         // }
-         //
-         // $(document).ready(function() {
-         //    thing1.on('mouseenter', foo);
-         // });
-
-
-
-
 
 
      // const mediaQuery = window.matchMedia('(min-width: 1024px)');
@@ -305,6 +284,7 @@
      // });
 
     </script>
-    <script src="./js/sketch.js"></script>
+    <!-- CHANGE -->
+    <script src="js/sketch.js"></script>
   </body>
 </html>
