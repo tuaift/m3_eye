@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/eye.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
+  </head>
+  <body>
+    <section class="content">
+      <div class="interactive-l-container" id="draggable">
+        <div class="dots-container">
+          <div class="dot fast">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x">jopa</div>
+                <div class="c-y">jopa</div>
+              </div>
+            </div>
+            <div class="dot-el"></div>
+          </div>
+          <div class="dot slow">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">983838</div>
+            </div>
+            <div class="dot-el"></div>
+          </div>
+          <div class="dot slow">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">983838</div>
+            </div>
+            <div class="dot-el"></div>
+          </div>
+          <div class="dot fast">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">983838</div>
+            </div>
+            <div class="dot-el"></div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="test-elem" id="draggable"></div> -->
+      <div class="counter-panel">
+        <div class="counter counter-num"></div>
+        <div class="counter-dot"></div>
+      </div>
+      <div class="clip-container">
+        <div class="eyelid"></div>
+        <div class="eyelid eyelid-bottom"></div>
+      </div>
+      <div class="control-layer">
+        <div class="button">
+          <img class="imgg img-blink-on" id="blink-on" src="./img/blink.svg" alt="">
+        </div>
+        <div class="button off">
+          <img class="imgg img-blink-off" id="blink-off" src="./img/dont_blink.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <div class="eye-container">
+      <svg class="eye" viewBox="0 0 1680 525" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+        <defs>
+          <clipPath id="svg-eye-top" clipPathUnits="objectBoundingBox">
+            <path d="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z" fill="black">
+              <animate
+                id="top-lid"
+                attributeName="d"
+                from="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z"
+                to="M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z"
+                dur="2.5s"
+                calcMode="spline"
+                values="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;"
+                keyTimes="0; 0.5; 1"
+                keySplines="0 0 .6 .2;
+                            0 0 0 .1;"
+                begin="indefinite"
+                fill="freeze"
+                />
+            </path>
+          </clipPath>
+          <clipPath id="svg-eye-bottom" clipPathUnits="objectBoundingBox">
+            <path d="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z" fill="black" transform='rotate(180 0.5 0.5)'>
+              <animate
+                id="bottom-lid"
+                attributeName="d"
+                from="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z"
+                to="M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z"
+                dur='2.5s'
+                calcMode="spline"
+                values="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,1.0012,0.167,1.0012,0.00477,1.0012 H0 z;
+                        M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z;"
+                keyTimes="0; 0.5; 1"
+                keySplines="0 0 .6 .2;
+                            0 0 0 .1;"
+                begin="indefinite"
+                fill="freeze"
+                />
+            </path>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+
+<!-- script ----------------------------->
+
+    <script>
+
+
+       let divs = document.getElementsByClassName('dot');
+       let winWidth = $(".interactive-l-container").width()
+       let winHeight = $(".interactive-l-container").height()
+
+       function getRandomNumber(min, max) {
+         return Math.random() * (max - min) + min;
+       };
+
+       for ( let i=0; i < divs.length; i++ ) {
+
+           let thisDiv = divs[i];
+
+           randomTop = getRandomNumber(0, winHeight);
+           randomLeft = getRandomNumber(0, winWidth);
+
+           thisDiv.style.marginTop = randomTop +"px";
+           thisDiv.style.marginLeft = randomLeft +"px";
+
+       };
+
+
+
+       $(function(){
+         let i = 0;
+         $('.dot').click(function(){
+           i += 1;
+           if (i < 10) {
+             $('.counter').html('0'+i);
+             $('.dot-num').html(i);
+           } else {
+             $('.counter').html(i);
+           }
+           $(this).children('.dot-info').first().css('display', 'flex');
+
+         });
+       });
+
+
+
+
+
+
+
+
+    $(document).ready(function() {
+      $("#draggable").draggable();
+    });
+
+     $(function(){
+         $(".imgg").css('height', 110 + '%');
+         $(window).resize(function(){
+             let h = $(window).height();
+             let w = $(window).width();
+             $(".imgg").css('height',(w <= 1024) ? parseInt(110 - h * 0.02) + '%' : 110 + '%');
+         });
+       });
+
+       $('#blink-on').click(function() {
+          document.getElementById('top-lid').beginElement();
+          document.getElementById('bottom-lid').beginElement();
+        })
+
+        $('#blink-off').click(function() {
+           document.getElementById('top-lid').endElement();
+           document.getElementById('bottom-lid').endElement();
+         })
+
+     // const mediaQuery = window.matchMedia('(min-width: 1024px)');
+     //
+     // $(function () {
+     //   let w = $(window).width()
+     //   let h = $(window).height()
+     //   if (w < mediaQuery) {
+     //     $(".imgg").css('height', parseInt(110 - h * 0.02) + '%')
+     //   }
+     // });
+
+    </script>
+  </body>
+</html>
