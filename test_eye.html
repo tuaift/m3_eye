@@ -14,34 +14,43 @@
     <section class="content">
       <div class="interactive-l-container" id="draggable">
         <div class="dots-container">
-          <div class="dot fast">
+          <div class="dot fast" data-el="el0">
             <div class="dot-info">
               <div class="dot-num">14</div>
               <div class="dot-coord">
-                <div class="c-x">jopa</div>
-                <div class="c-y">jopa</div>
+                <div class="c-x"></div>
+                <div class="c-y"></div>
               </div>
             </div>
             <div class="dot-el"></div>
           </div>
-          <div class="dot slow">
+          <div class="dot slow" data-el="el1">
             <div class="dot-info">
               <div class="dot-num">14</div>
-              <div class="dot-coord">983838</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
             </div>
             <div class="dot-el"></div>
           </div>
-          <div class="dot slow">
+          <div class="dot slow" data-el="el2">
             <div class="dot-info">
               <div class="dot-num">14</div>
-              <div class="dot-coord">983838</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
             </div>
             <div class="dot-el"></div>
           </div>
-          <div class="dot fast">
+          <div class="dot fast" data-el="el3">
             <div class="dot-info">
               <div class="dot-num">14</div>
-              <div class="dot-coord">983838</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
             </div>
             <div class="dot-el"></div>
           </div>
@@ -49,7 +58,7 @@
       </div>
       <!-- <div class="test-elem" id="draggable"></div> -->
       <div class="counter-panel">
-        <div class="counter counter-num"></div>
+        <div class="counter counter-num">00</div>
         <div class="counter-dot"></div>
       </div>
       <div class="clip-container">
@@ -69,7 +78,7 @@
       <svg class="eye" viewBox="0 0 1680 525" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
         <defs>
           <clipPath id="svg-eye-top" clipPathUnits="objectBoundingBox">
-            <path d="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z" fill="black">
+            <path d="M0,0 H1 v1.0012 H0.99523 C0.83,-0.305,0.17,-0.305,0.00477,1.0012 H0 z" fill="black">
               <animate
                 id="top-lid"
                 attributeName="d"
@@ -89,7 +98,7 @@
             </path>
           </clipPath>
           <clipPath id="svg-eye-bottom" clipPathUnits="objectBoundingBox">
-            <path d="M0,0 H1 v1.0012 H0.99523 C0.81,-0.305,0.167,-0.305,0.00477,1.0012 H0 z" fill="black" transform='rotate(180 0.5 0.5)'>
+            <path d="M0,0 H1 v1.0012 H0.99523 C0.83,-0.305,0.17,-0.305,0.00477,1.0012 H0 z" fill="black" transform='rotate(180 0.5 0.5)'>
               <animate
                 id="bottom-lid"
                 attributeName="d"
@@ -139,20 +148,53 @@
 
 
 
-       $(function(){
-         let i = 0;
-         $('.dot').click(function(){
-           i += 1;
-           if (i < 10) {
-             $('.counter').html('0'+i);
-             $('.dot-num').html(i);
-           } else {
-             $('.counter').html(i);
+       let x = 0;
+       let i = 0;
+       let list = [];
+
+       $(function() {
+         $('.dot').click(function() {
+           if (jQuery.inArray($(this).data('el'), list) === (-1)) {
+             list[x] = $(this).data('el');
+             x+=1;
+             i+=1;
+             if (i < 10) {
+               $('.counter').html('0'+i);
+             } else {
+               $('.counter').html(i);
+             }
+             $(this).find('.dot-num').html(x);
            }
            $(this).children('.dot-info').first().css('display', 'flex');
 
+
          });
        });
+
+
+       setInterval(function () {
+         let co_x = $('.dot').offset().left;
+         $('.c-x').html(parseInt(co_x * 0.4) + "." + parseInt(co_x*2));
+         $('.c-y').html(parseInt(co_x * 0.1) + "." + Math.abs(parseInt(co_x*1.5)));
+       });
+
+
+       // $(function(){
+       //   let i = 0;
+       //   $('.dot').click(function(){
+       //     i += 1;
+       //     let index = $(".dot").index(this);
+       //     if (i < 10) {
+       //       $('.counter').html('0'+i);
+       //       $(this).find('.dot-num').html(index);
+       //     } else {
+       //       $('.counter').html(i);
+       //     }
+       //     $(this).children('.dot-info').first().css('display', 'flex');
+       //   });
+       // });
+
+
 
 
 
