@@ -52,6 +52,7 @@ pointer.addEventListener('click', () => {
     ellipse.style.transform = 'translate(-50%, -50%)';
 
     document.getElementById('canvas-parent').appendChild(pointer);
+    pointer.style.animationPlayState="paused";
     pointer.style.top = '48%';
     pointer.style.left = '82%';
     pointer.style.transform = 'rotate(0deg)';
