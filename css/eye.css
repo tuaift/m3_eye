@@ -167,11 +167,11 @@ section {
 }
 
 .fast {
-  /* animation: cloud-move 50s infinite;  */
+  animation: cloud-move 50s infinite;
 }
 
 .slow {
-  /* animation: cloud-move 40s infinite; */
+  animation: cloud-move 40s infinite;
 }
 
 .dot-info {
