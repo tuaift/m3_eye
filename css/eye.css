@@ -349,11 +349,11 @@ canvas {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 400px;
+  top: 500px;
   left: -300px;
   transform: rotate(135deg);
   cursor: pointer;
-  animation: arrow-canv .6s alternate infinite;
+  /* animation: arrow-canv .6s alternate infinite; */
 }
 
 #canvasCircle {
