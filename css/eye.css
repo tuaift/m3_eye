@@ -331,8 +331,8 @@ section {
 }
 
 @keyframes arrow-canv {
-  0% {transform: translate(0px, 0px) rotate(145deg);}
-  100% {transform: translate(20px, -40px) rotate(145deg);}
+  0% {top: 500px; left: -350px;}
+  100% {top: 450px; left: -300px;}
 }
 
 canvas {
@@ -349,16 +349,16 @@ canvas {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 500px;
+  top: 400px;
   left: -300px;
-  transform: rotate(145deg);
+  transform: rotate(135deg);
   cursor: pointer;
-  animation: arrow-canv 0.8s alternate infinite;
+  animation: arrow-canv .6s alternate infinite;
 }
 
 #canvasCircle {
-  width: 800px;
-  height: 800px;
+  width: 900px;
+  height: 900px;
   z-index: -1;
   top: 500px;
   left: -1000px;
