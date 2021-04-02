@@ -40,7 +40,7 @@
                 <div class="c-y"></div>
               </div>
             </div>
-            <div class="dot-el"></div>
+            <div class="dot-el" id="cl2"></div>
           </div>
           <div class="dot slow" data-el="el2">
             <div class="dot-info">
@@ -50,7 +50,7 @@
                 <div class="c-y"></div>
               </div>
             </div>
-            <div class="dot-el"></div>
+            <div class="dot-el" id="cl3"></div>
           </div>
           <div class="dot fast" data-el="el3">
             <div class="dot-info">
@@ -60,7 +60,107 @@
                 <div class="c-y"></div>
               </div>
             </div>
-            <div class="dot-el"></div>
+            <div class="dot-el" id="cl4"></div>
+          </div>
+          <div class="dot slow" data-el="el4">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl5"></div>
+          </div>
+          <div class="dot fast" data-el="el5">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl6"></div>
+          </div>
+          <div class="dot slow" data-el="el6">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl7"></div>
+          </div>
+          <div class="dot fast" data-el="el7">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl8"></div>
+          </div>
+          <div class="dot slow" data-el="el8">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl9"></div>
+          </div>
+          <div class="dot slow" data-el="el9">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl10"></div>
+          </div>
+          <div class="dot fast" data-el="el10">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl11"></div>
+          </div>
+          <div class="dot slow" data-el="el11">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl12"></div>
+          </div>
+          <div class="dot fast" data-el="el12">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl13"></div>
+          </div>
+          <div class="dot slow" data-el="el13">
+            <div class="dot-info">
+              <div class="dot-num">14</div>
+              <div class="dot-coord">
+                <div class="c-x"></div>
+                <div class="c-y"></div>
+              </div>
+            </div>
+            <div class="dot-el" id="cl14"></div>
           </div>
         </div>
       </div>
@@ -222,7 +322,7 @@
 
        setInterval(function () {
          let co_x = $('.dot').offset().left;
-         $('.c-x').html(parseInt(co_x * 0.4) + "." + parseInt(co_x*2));
+         $('.c-x').html(parseInt(co_x * 0.4) + "." + Math.abs(parseInt(co_x*2)));
          $('.c-y').html(parseInt(co_x * 0.1) + "." + Math.abs(parseInt(co_x*1.5)));
        });
 
