@@ -167,11 +167,11 @@ section {
 }
 
 .fast {
-  animation: cloud-move 50s infinite;
+  animation: cloud-move 120s infinite;
 }
 
 .slow {
-  animation: cloud-move 40s infinite;
+  animation: cloud-move 100s infinite;
 }
 
 .dot-info {
@@ -327,7 +327,7 @@ section {
 
 @keyframes cloud-move {
   0% {transform: translateX(0%);}
-  100% {transform: translateX(-100%);}
+  100% {transform: translateX(-250%);}
 }
 
 @keyframes arrow-canv {
